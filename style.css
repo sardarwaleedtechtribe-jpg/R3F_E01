@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.model {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #fefdfd;
+    z-index: 1;
+}
+
+section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 2;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 8vw;
+    font-weight: 300;
+    line-height: 100%;
+}
+
+h2 {
+    font-size: 2vw;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: center;
+}
+
+p {
+    font-size: 0.8vw;
+    font-weight: 500;
+    line-height: 140%;
+    text-align: center;
+    max-width: 40vw;
+}
+
+/* Info Section Specifics */
+.info {
+    gap: 4rem;
+}
+
+.tags {
+    display: flex;
+    gap: 2rem;
+    opacity: 0.7;
+}
+
+.tags p {
+    font-size: 0.7vw;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+}
+
+/* Scanner Section Components */
+.scan-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 3rem 4rem;
+    z-index: 3;
+}
+
+.product-id h2 {
+    font-size: 3vw;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+.product-description p {
+    font-size: 0.7vw;
+    opacity: 0.6;
+}
+
+.scan-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 22vw;
+    height: 32vw;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.8rem;
+    background: transparent;
+}
+
+.barcode {
+    position: absolute;
+    bottom: 2rem;
+    left: 10%;
+    transform: translateX(-50%);
+    width: 200px;
+    opacity: 0.4;
+}
+
+.purchased {
+    position: absolute;
+    bottom: 2rem;
+    right: 4rem;
+    padding: 0.8rem 2.5rem;
+    border: 1px solid #000;
+    border-radius: 5rem;
+}
+
+.purchased p {
+    font-size: 0.6vw;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Outro Section */
+.outro h2 {
+    font-size: 3.5vw;
+    max-width: 60vw;
+}
+
+/* Model Selector Overlay */
+.model-selector {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.6rem;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 5rem;
+    z-index: 100;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.selector-btn {
+    padding: 0.6rem 1.4rem;
+    border: none;
+    background: transparent;
+    color: #000;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    border-radius: 5rem;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0.4;
+}
+
+.selector-btn:hover {
+    opacity: 0.8;
+}
+
+.selector-btn.active {
+    opacity: 1;
+    background: #000;
+    color: #fff;
+}
+
+/* Lenis/Smooth Scroll Tweaks */
+html.lenis {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
