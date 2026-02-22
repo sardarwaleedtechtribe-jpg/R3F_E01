@@ -9,10 +9,10 @@ import { useModelStore } from './store/modelStore'
 gsap.registerPlugin(ScrollTrigger)
 
 const MODELS_CONFIG = [
-    { path: '/assets/bunny_can.glb', scale: 0.7, rotation: { z: -0.1645 }, label: 'Bunny' },
-    { path: '/assets/beer_can.glb', scale: 1.1, rotation: { y: 0 }, label: 'Beer' },
-    { path: '/assets/retro_pepsi_can.glb', scale: 0.185, rotation: { y: 0 }, label: 'Retro Pepsi' },
-    { path: '/assets/can.glb', scale: 20, rotation: { y: 0 }, label: 'Original Can' },
+    { path: '/assets/bunny_can.glb',     scale: 0.7,    rotation: { z: -0.1645 },  label: 'Bunny' },
+    { path: '/assets/beer_can.glb',      scale: 1.1,    rotation: { y: 0 },        label: 'Beer' },
+    { path: '/assets/retro_pepsi_can.glb',scale: 0.185, rotation: { y: 0 },        label: 'Retro Pepsi' },
+    { path: '/assets/can.glb',           scale: 20,     rotation: { y: 0 },        label: 'Original Can' },
 ]
 
 export default function App() {

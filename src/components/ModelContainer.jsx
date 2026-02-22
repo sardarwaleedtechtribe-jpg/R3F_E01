@@ -63,7 +63,6 @@ function Model({ config, index }) {
 
         groupRef.current.add(clone)
 
-        // Initial reveal for model 0
         if (index === 0) {
             groupRef.current.visible = true
             gsap.to(scaleProxy.current, {
@@ -76,6 +75,8 @@ function Model({ config, index }) {
                 },
             })
             wasActive.current = true
+        } else {
+            wasActive.current = false
         }
 
         return () => {
@@ -204,5 +205,3 @@ export default function ModelContainer({ modelsConfig }) {
         </>
     )
 }
-
-// Pre-warm GLTF cache
