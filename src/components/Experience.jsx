@@ -1,4 +1,5 @@
 import { Canvas } from '@react-three/fiber'
+import * as THREE from 'three'
 import ModelContainer from './ModelContainer'
 
 export default function Experience({ modelsConfig }) {
@@ -8,17 +9,15 @@ export default function Experience({ modelsConfig }) {
             gl={{
                 antialias: true,
                 alpha: true,
+                toneMapping: THREE.ACESFilmicToneMapping,
+                toneMappingExposure: 1.5,
             }}
+            shadows
             onCreated={({ gl }) => {
                 gl.setClearColor(0xffffff, 1)
                 gl.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-                gl.shadowMap.enabled = true
-                gl.physicallyCorrectLights = true
             }}
-            style={{ width: '100%', height: '100%' }}
-            toneMapping={4} // ACESFilmicToneMapping
-            toneMappingExposure={1.5}
-        >
+            style={{ width: '100%', height: '100%' }}>
             {/* Lighting */}
             <ambientLight intensity={3} />
             <directionalLight position={[5, 10, 7.5]} intensity={1} />
